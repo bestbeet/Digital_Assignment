@@ -1,0 +1,33 @@
+module clock_digtal_counter (q,clk,reset);
+
+output [3:0] q;
+input clk,reset;
+
+T_FF tff0 (q[0], clk, reset);
+T_FF tff0 (q[0], clk, reset);
+T_FF tff0 (q[0], clk, reset);
+T_FF tff0 (q[0], clk, reset);
+
+endmodule
+
+module T_FF(q, clk, reset);
+output q;
+input clk, reset;
+D_FF dff0(q,clk,reset);
+
+endmodule
+
+
+module D_FF (q, d, clk, reset);
+
+output q;
+input d, clk, reset;
+reg q;
+
+always @(psedge reset or negedge clk)
+if (reser)
+	q = 1'b0;
+else
+ q = d ;
+
+endmodule
